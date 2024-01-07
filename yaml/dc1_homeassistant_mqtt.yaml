@@ -15,22 +15,22 @@ substitutions:
   #设备名称（多个dc1改成不一样的，API接入和ESPHOME容器会识别这个）
   device_name: phicomm_dc1_1
   #MQTT设备名称（多个dc1改成不一样的，MQTT接入及控制会识别这个）
-  mqtt_device_name: ChilerenRoom
+  mqtt_device_name: BedRoom
   ### 这里之所以会取2个设备名称独立开来，是为了便于通过MQTT接入服务端（如ioBroker）后的设备分类和集中
   #WiFi_SSID名称
-  wifi_ssid: '777'
+  wifi_ssid: 'newifi3'
   #WiFi密码
-  wifi_password: '1122334455'
+  wifi_password: 'dede1979'
   #如果SSID是隐藏的，设置为true
   wifi_fast_connect: 'false'
   #WiFi离线多久后重启设备，秒s/分钟min/小时h，不需要此功能设置为0s，建议设置0s，防止异常重启，或者设置的大一些
   wifi_reboot_timeout: 0s
   #OTA密码
-  ota_password: '123456'
+  # ota_password: '123456'
   #电量统计的数据刷新时间（内部刷新时间，非上报周期），秒s/分钟min/小时h
   cse7766_update_interval: 1s
   #MQTT代理服务器IP地址
-  mqtt_broker: '192.168.88.115'
+  mqtt_broker: 'mqtt.lan'
   #MQTT代理服务器端口
   mqtt_port: '1883'
   #MQTT代理服务器用户名
@@ -51,7 +51,7 @@ substitutions:
   #MQTT消息前缀
   mqtt_topic_prefix: 'homeassistant/phicomm_dc1/${mqtt_device_name}'
   #Home Assistant自动发现，true开启，false关闭
-  mqtt_discovery: 'true'
+  mqtt_discovery: 'false'
   #Home Assistant重启时自动发现消息保持
   mqtt_discovery_retain: 'false'
   #Home Assistant发现设备后使用的前缀
@@ -119,7 +119,7 @@ mqtt:
 #------- OTA 空中升级配置 -------
 ota:
   safe_mode: true
-  password: $ota_password
+  # password: $ota_password
 #  port: 3286
 
 #------- WEB后台，不建议使用 -------
