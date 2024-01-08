@@ -14,7 +14,7 @@ substitutions:
   #WiFi芯片版本，型号中带B的为csm64f02_b，不带B的为csm64f02
   board_model: esp01_1m
   #设备名称(多个dc1改成不一样的)
-  device_name: phicomm_dc1
+  device_name: phicomm-dc1
   #WiFi_SSID名称
   wifi_ssid: newifi3
   #WiFi密码
@@ -44,7 +44,7 @@ wifi:
 #----------------------------------------------------
   domain: .local
   reboot_timeout: $wifi_reboot_timeout
-  power_save_mode: none
+  power_save_mode: 无
   fast_connect: $wifi_fast_connect
   ap:
     ssid: $device_name
