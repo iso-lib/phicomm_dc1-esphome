@@ -14,7 +14,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
 
     steps:
     - name: Checkout
@@ -54,7 +54,7 @@ jobs:
         do
           basename=`basename $f .yaml`
           echo "Compiling $f..."
-          python3 -m esphome $basename.yaml compile
+          python3 -m esphome compile $basename.yaml
           find . -name 'firmware.bin'  -exec mv {} ${basename}_firmware.bin \;
           find . -name ${basename}_firmware.bin  -exec cp {} ${bin_output_path} \;
           echo "Done"
